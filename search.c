@@ -1,36 +1,41 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 // Linear Search - Array
-/*
-int main(){
-	int* arr = (int*)malloc(5*sizeof(int));
+
+void lineararr(){
+	int ele = 0;
+	printf("Enter the number of elements: ");
+	scanf("%d", &ele);
+	int* arr = (int*)malloc(ele*sizeof(int));
 	int check=0;
-	printf("Enter 5 elements: ");
-	for(int i=0; i<5; i++){
+	printf("Enter %d elements: ", ele);
+	for(int i=0; i<ele; i++){
 		scanf("%d", &arr[i]);
 	}
 	printf("Enter a number to check: ");
 	int num;
 	scanf("%d",&num);
-	for(int i=0; i<5; i++){
+	int i=0;
+	for(i=0; i<5; i++){
 		if(arr[i]==num){
 			check = 1;
 		}
 	}
 	if(check==1)
-		printf("Found");
+		printf("Found\n");
 	else
-		printf("Not found");
+		printf("Not found\n");
 }
-*/
+
 // Binary Search - Array
-/*
-int main(){
+
+void binaryarr(){
 	int ele = 0;
 	printf("Enter the number of elements: ");
 	scanf("%d", &ele);
 	int* arr = (int*)malloc(ele*sizeof(int));
-	printf("Enter 5 elements: ");
+	printf("Enter %d elements: ", ele);
 	for(int i=0; i<ele; i++){
 		scanf("%d", &arr[i]);
 	}
@@ -40,10 +45,12 @@ int main(){
 	int low = 0;
 	int high = ele-1;
 	int mid=0;
+	int count = 0;
 	while(low<=high){
 		mid = (high+low)/2;
 		if(num == arr[mid]){
-			printf("Found at %d", mid+1);
+			count = 1;
+			printf("Found\n");
 			break;
 		}
 		else if(num<arr[mid]){
@@ -52,14 +59,13 @@ int main(){
 		else if(num>arr[mid]){
 			low = mid+1;
 		}
-		else{
-			printf("Not found");
-		}
 	}
+	if(count == 0)
+		printf("Not Found\n");
 }
-*/
+
 // Linear Search - Linked List
-/*
+
 typedef struct node{
 	int data;
 	struct node* link;
@@ -83,7 +89,8 @@ void userinlist(int data){
 	}
 	temp->link = n;
 }
-int main(){
+
+void linearlist(){
 	int n=0;
 	printf("Enter the number of elements: ");
 	scanf("%d", &n);
@@ -106,35 +113,14 @@ int main(){
 		temp = temp->link;
 	}
 	if(check==1)
-		printf("Found");
+		printf("Found\n");
 	else
-		printf("Not Found");
+		printf("Not Found\n");
 		
 }
-*/
-typedef struct node{
-	int data;
-	struct node* link;
-}node;
-node* newnode(int data){
-	node* n = (node*)malloc(sizeof(node));
-	n->data = data;
-	n->link = NULL;
-	return n;
-}
-node* head;
-void userinlist(int data){
-	node* n = newnode(data);
-	if(head==NULL){
-		head = n;
-		return;
-	}
-	node* temp = head;
-	while(temp->link != NULL){
-		temp = temp->link;
-	}
-	temp->link = n;
-}
+
+// Binary Search - Linked List
+
 int find(int index){
 	int ind = 0;
 	node* temp = head;
@@ -148,7 +134,7 @@ int find(int index){
 		}
 	}
 }
-int main(){
+void binarylist(){
 	int n=0;
 	printf("Enter the number of elements: ");
 	scanf("%d", &n);
@@ -175,7 +161,7 @@ int main(){
 		mid = (high+low)/2;
 		if(num == find(mid)){
 			check = 1;
-			printf("Found at %d", mid+1);
+			printf("Found\n");
 			break;
 		}
 		else if(num<find(mid)){
@@ -187,6 +173,26 @@ int main(){
 		
 	}
 	if(check == 0){
-		printf("Not Found");
+		printf("Not Found\n");
 	}
+}
+
+
+int main(){
+	printf("Choose your operation: \n");
+	printf("Press 1 for Linear Search using Array\nPress 2 for Binary Search using Array\n");
+	printf("Press 3 for Linear Search using Linked List\nPrint 4 for Binary Search using Linked List\n");
+	printf("Note:- Please enter sorted numbers for Linear search\n");
+	
+	int op;
+	scanf("%d", &op);
+	
+	if(op==1)
+		lineararr();
+	else if(op==2)
+		binaryarr();
+	else if(op==3)
+		linearlist();
+	else if(op==4)
+		binarylist();
 }
