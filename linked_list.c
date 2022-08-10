@@ -72,8 +72,9 @@ int main(){
 		del3 = del3->link;
 		count_dl++;
 	}
+	node* temp = del3->link;
 	del3->link = del3->link->link;
-	free(del3->link->link);
+	free(temp);
 	
 	// printing the list.
 	node* support = (node*)malloc(sizeof(node));
