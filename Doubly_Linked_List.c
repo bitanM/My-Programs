@@ -68,6 +68,31 @@ void insertatrandom(int data, int pos){
 	temp->next = n;
 	n->prev = temp;
 }
+void removefromend(){
+	node* temp = head;
+	while(temp->next!=NULL){
+		temp = temp->next;
+	}
+	temp->prev->next = NULL;
+	free(temp);
+}
+void removefromhead(){
+	node* temp = head;
+	temp->next->prev = NULL;
+	head = temp->next;
+	free(temp);
+}
+void removefromrandom(int pos){
+	node* temp = head;
+	int count = 1;
+	while(temp->next!=NULL && count<pos){
+		temp = temp->next;
+		count++;
+	}
+	temp->prev->next = temp->next;
+	temp->next->prev = temp->prev;
+	free(temp);
+}
 int main(){
 	printf("Making a Doubly linked list\n");
 	while(true){
@@ -76,9 +101,13 @@ int main(){
 		printf("If you want to see the reverse of the list press 3\n");
 		printf("If you want to insert at the beginning press 4\n");
 		printf("If you want to insert at any random position press 5\n");
+		printf("If you want to remove from the end press 6\n");
+		printf("If you want to remove from the head press 7\n");
+		printf("If you want to remove from random position press 8\n");
 		printf("Press any other digit to exit\n");
 		int n;
 		int data;
+		int pos;
 		scanf("%d", &n);
 		if(n==1){
 		printf("\nEnter the value of the node: ");
@@ -100,10 +129,20 @@ int main(){
 		else if(n==5){
 			printf("Enter the value: \n");
 			scanf("%d", &data);
-			int pos;
 			printf("Enter the position: \n");
 			scanf("%d", &pos);
 			insertatrandom(data, pos);
+		}
+		else if(n==6){
+			removefromend();
+		}
+		else if(n==7){
+			removefromhead();
+		}
+		else if(n==8){
+			printf("Enter the position: \n");
+			scanf("%d", &pos);
+			removefromrandom(pos);
 		}
 		else{
 			break;
