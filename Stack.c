@@ -1,38 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-int *stck;
-int top, max;
+int *stack;
+int top=-1;
+int max;
 void push(int n)
 {
     if(top<max-1)
     {
-        stck[++top]=n;
+        stack[++top]=n;
     }
     else{
-        printf("Stack overflow\n");
+        printf("Stack Overflow\n");
     }
 }
 int pop()
 {
     if(top==-1)
     {
-        printf("Stack underflow\n");
+        printf("Stack Underflow\n");
         return 0;
     }
     else{
-        return stck[top--];
+        return stack[top--];
     }
 }
-int peek()
+void peek()
 {
     if(top>-1)
     {
-        return stck[top];
+        printf("%d\n", stack[top]);
+        return;
     }
     else{
-        printf("No element in the stack\n");
-        return 0;
+        printf("Empty Stack\n");
+        return;
     }
 }
 int main(){
@@ -42,14 +44,15 @@ int main(){
 	int num;
 	scanf("%d", &n);
 	max = n;
+	stack = (int*)malloc(sizeof(int)*max);
 	while(true){
 		printf("If you want to push press 1\n");
 		printf("If you want to pop press 2\n");
 		printf("If you wnat to see the top element press 3\n");
 		scanf("%d", &choice);
 		if(choice == 1){
-			scanf("%d", &num);
 			printf("Enter the element: ");
+			scanf("%d", &num);
 			push(num);
 		}
 		else if(choice == 2){
@@ -63,4 +66,3 @@ int main(){
 		}
 	}
 }
-
