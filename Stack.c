@@ -4,20 +4,16 @@
 int *stack;
 int top=-1;
 int max;
-void push(int n)
-{
-    if(top<max-1)
-    {
-        stack[++top]=n;
-    }
-    else{
-        printf("Stack Overflow\n");
-    }
+void push(int n){
+   if(top<max-1){
+	stack[++top]=n;
+   }
+   else{
+	printf("Stack Overflow\n");
+   }
 }
-int pop()
-{
-    if(top==-1)
-    {
+int pop(){
+    if(top==-1){
         printf("Stack Underflow\n");
         return 0;
     }
@@ -25,11 +21,9 @@ int pop()
         return stack[top--];
     }
 }
-void peek()
-{
-    if(top>-1)
-    {
-        printf("%d\n", stack[top]);
+void peek(){
+    if(top>-1){
+	printf("%d\n", stack[top]);
         return;
     }
     else{
