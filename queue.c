@@ -6,28 +6,32 @@ int max=4;
 int front=-1;
 int rear=-1;
 void enqueue(int n){
-	if(rear < max-1){
-		q[++rear] = n;
+	if((rear+1)%max == front){
+		printf("The queue is full");
+	}
+	else{
+		rear = (rear+1)%max;
+		q[rear] = n;
 		if(front == -1){
 			front = rear;
 		}
 	}
-	if(rear == max-1){
-		printf("The Queue is full\n");
-	}
 }
 void dequeque(){
-	if(front <= rear){
-		++front;
-	}
-	if(front == rear && rear == -1){
+	if(rear == -1){
 		printf("The Queue is Empty");
+	}
+	else{
+		front = (front+1)%max;
 	}
 }
 void show(){
-	for(int i=front; i<=rear; i++){
-		printf(" %d ", q[i]);
+	int i=front;
+	do{
+		printf("%d ",i);
+		i = (i+1)%max;
 	}
+	while(i!=(rear+1)%max);
 }
 int main(){
 	printf("Making a Q\n");
