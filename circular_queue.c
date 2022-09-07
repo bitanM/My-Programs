@@ -21,6 +21,10 @@ void dequeque(){
 	if(rear == -1){
 		printf("The Queue is Empty");
 	}
+	else if(front == rear){
+			front = -1;
+			rear = -1;
+	}
 	else{
 		front = (front+1)%max;
 	}
@@ -28,7 +32,7 @@ void dequeque(){
 void show(){
 	int i=front;
 	do{
-		printf("%d ",i);
+		printf("%d ",q[i]);
 		i = (i+1)%max;
 	}
 	while(i!=(rear+1)%max);
