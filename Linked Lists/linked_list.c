@@ -1,3 +1,4 @@
+//Simple_linked_list
 #include<stdio.h>
 #include<stdlib.h>
 // creating a datatype of node, which wiil build the list.
