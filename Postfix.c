@@ -24,17 +24,6 @@ int pop(){
 int empty(){
 	return top == -1;
 }
-
-
-
-
-
-
-
-
-
-
-
 int precedence(char ch){
 	switch(ch){
 		case '+' :
@@ -59,14 +48,10 @@ void postfix(char ch[]){
 		int pi = 0;
 		for(int i=0; i<size; i++){
 			sym = ch[i];
-			
 				printf("sym = %c\n", sym);
 				if(precedence(sym) == -1){
 					postfix[pi++]=sym;
 				}
-					
-					
-					
 				else{
 					if(top == -1){
 						push(sym);
