@@ -24,10 +24,10 @@ void userinlist(int data){
 void selection_sort(){
 	node* temp = head ;
 	node* min;
-	while(temp->next != NULL){
+	while(temp != NULL){
 		min = temp;
 		node* temp2 = temp;
-		while(temp2->next != NULL){
+		while(temp2 != NULL){
 			if(temp2->data < min->data){
 				min = temp2;
 			}
