@@ -82,18 +82,18 @@ void show(){
 	}
 }
 int main(){
-	printf("Making a Doubly linked list\n");
+	printf("Making a Single linked list\n");
 	while(true){
-		printf("\nPress 1 to add a node & Press 4 to remove\n");
-		printf("Press 2 to add node at head & Press 5 to remove from head\n");
-		printf("Press 3 to add node at any random place & Press 6 to remove from any place\n");
-		printf("Enter 7 to see the full List & 8 to delete the full list.\n");
+		printf("\nPress '1' to add a node & Press '4' to remove\n");
+		printf("Press '2' to add node at head & Press '5' to remove from head\n");
+		printf("Press '3' to add node at any random place & Press '6' to remove from any place\n");
+		printf("Enter '7' to see the full List & '8' to delete the full list.\n");
 		int n;
 		int data;
 		int pos;
 		scanf("%d", &n);
 		if(n==1){
-		printf("\nEnter the value of the node: ");
+		printf("\nEnter the value: ");
 		scanf("%d", &data);
 		insert_at_end(data);
 		}
