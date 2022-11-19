@@ -38,7 +38,7 @@ void inorder(node* temp){
 		return ;
 	}
 	inorder(temp->left);
-	printf("%d", temp->data);
+	printf(" %d", temp->data);
 	inorder(temp->right);
 }
 	

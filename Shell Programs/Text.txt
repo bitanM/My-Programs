@@ -1,0 +1,5 @@
+Shell Scripting Tutorial
+A Bourne Shell Programming / Scripting Tutorial for 
+learning about using the Unix shell. Learn Linux / Unix 
+shell scripting by example along with the theory.
+ I'll have you mastering Unix shell scripting in no time.
