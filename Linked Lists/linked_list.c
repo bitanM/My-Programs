@@ -1,6 +1,7 @@
 //Simple_linked_list
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdbool.h>
 // creating a datatype of node, which wiil build the list.
 typedef struct node{
 	int data;
@@ -14,76 +15,121 @@ node* newnode(int data){
 	return n;
 }
 node* head;
-int main(){
-	node* N1 = newnode(14);
-	node* N2 = newnode(15);
-	node* N3 = newnode(16);
-	
-	N1->link = N2;
-	N2->link = N3;	
-	
-	// inserting a node at the head of the list.
-	head = (node*)malloc(sizeof(node));
-	head->link = N1;
-	node* N0 = newnode(13);
-	N0->link = N1;
-	head = N0;
-	
-	// inserting a node at the end of the list.
-	node* N4 = newnode(17);
-	node* temp = (node*)malloc(sizeof(node));
-	temp = head;
+void insert_at_end(int data){
+	node* n = newnode(data);
+	if(head == NULL){
+		head = n;
+		return ;
+	}
+	node* temp = head;
 	while(temp->link != NULL){
 		temp = temp->link;
 	}
-	temp->link = N4;
-	
-	// inserting a node at any random position of the node.
-	node* N5 = newnode(18);
+	temp->link = n;
+}
+void insert_at_beginning(int data){
+	node* temp = newnode(data);
+	temp->link = head;
+	head = temp;
+}
+void insert_at_random(int data, int pos){
+	node* n = newnode(data);
+	node* temp = head;
 	int count = 1;
-	node* temp2 = (node*)malloc(sizeof(node));
-	temp2 = head;
-	while(temp2->link!=NULL && count<=2){
-		temp2 = temp2->link;
+	while(temp->link != NULL && count<pos-1){
+		temp = temp->link;
 		count++;
 	}
-	N5->link = temp2->link;
-	temp2->link = N5;
-	
-	// removing a node from the head of a list.
-	node* del1 = (node*)malloc(sizeof(node));
-	del1 = head;
-	head = head->link;
-	free(del1);
-	
-	// removing a node from the end of a list.
-	node* del2 = (node*)malloc(sizeof(node));
-	del2 = head;
-	while(del2->link->link!=NULL){
-		del2 = del2->link;
+	n->link = temp->link;
+	temp->link = n;
+}
+void remove_from_end(){
+	node* temp = head;
+	while(temp->link != NULL){
+		temp = temp->link;
 	}
-	free(del2->link->link);
-	del2->link=NULL;
-	
-	// removing a node from any random position of a list.
-	node* del3 = (node*)malloc(sizeof(node));
-	del3 = head;
-	int count_dl = 1;
-	while(del3->link->link!=NULL && count_dl<=1){
-		del3 = del3->link;
-		count_dl++;
-	}
-	node* temp = del3->link;
-	del3->link = del3->link->link;
 	free(temp);
-	
-	// printing the list.
-	node* support = (node*)malloc(sizeof(node));
-	support = head;
-	while(support!=NULL){
-		printf("%d ", support->data);
-		support = support->link;
+}
+void remove_from_beginning(){
+	node* temp = head;
+	head = temp->link;
+	free(temp);
+}
+void remove_from_random(int pos){
+	node* temp = head;
+	int count = 1;
+	while(temp->link != NULL && count<pos-1){
+		temp = temp->link;
+		count++;
 	}
-	printf("\n");
+	temp->link = temp->link->link;
+}
+void delete_full_list(){
+	node* temp = head;
+	while(head!=NULL){
+		head = NULL;
+		free(head);
+		head = temp->link;
+		temp = temp->link;
+	}
+}
+void show(){
+	node* temp;
+	temp = head;
+	while(temp != NULL){
+		printf("%d ", temp->data);
+		temp = temp->link;
+	}
+}
+int main(){
+	printf("Making a Doubly linked list\n");
+	while(true){
+		printf("\nPress 1 to add a node & Press 4 to remove\n");
+		printf("Press 2 to add node at head & Press 5 to remove from head\n");
+		printf("Press 3 to add node at any random place & Press 6 to remove from any place\n");
+		printf("Enter 7 to see the full List & 8 to delete the full list.\n");
+		int n;
+		int data;
+		int pos;
+		scanf("%d", &n);
+		if(n==1){
+		printf("\nEnter the value of the node: ");
+		scanf("%d", &data);
+		insert_at_end(data);
+		}
+		else if(n==2){
+			printf("Enter the value: \n");
+			scanf("%d", &data);
+			insert_at_beginning(data);
+		}
+		else if(n==3){
+			printf("Enter the value: \n");
+			scanf("%d", &data);
+			printf("Enter the position: \n");
+			scanf("%d", &pos);
+			insert_at_random(data, pos);
+		}
+		else if(n==4){
+			remove_from_end();
+		}
+		else if(n==5){
+			remove_from_beginning();
+		}
+		else if(n==6){
+			printf("Enter the position: \n");
+			scanf("%d", &pos);
+			remove_from_random(pos);
+		}
+		else if (n==7)
+		{
+			show();
+		}
+		else if(n==8){
+			delete_full_list();
+		}
+		else{
+			break;
+		}
+	}
 }
 
