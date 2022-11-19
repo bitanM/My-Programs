@@ -66,7 +66,8 @@ void remove_from_random(int pos){
 }
 void delete_full_list(){
 	node* temp = head;
-	while(temp->link!=NULL){
+	while(head!=NULL){
+		head = NULL;
 		free(head);
 		head = temp->link;
 		temp = temp->link;
