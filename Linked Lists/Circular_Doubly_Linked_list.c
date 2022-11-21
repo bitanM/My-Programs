@@ -15,7 +15,16 @@ node* newnode(int data){
 	return n;
 }
 node* head;
-void userinlist(int data){
+int numberofnodes(){
+	node* temp = head;
+	int num=0;
+	while(temp->next!=head){
+		num ++;
+		temp = temp->next;
+		}
+	return num;
+}
+void insert_at_end(int data){
 	node* n = newnode(data);
 	if(head == NULL){
 		head = n;
@@ -31,14 +40,6 @@ void userinlist(int data){
 	n->prev = temp;
 	n->next = head;
 }
-void show(){
-	node* temp;
-	temp = head;
-	while(temp->next != head){
-		printf("%d ", temp->data);
-		temp = temp->next;
-	}
-}
 /*void reverse(){
 	node* current = head;
 	node* temp = NULL;
@@ -52,7 +53,7 @@ void show(){
 		head = temp->prev;
 	}
 }*/
-void insertathead(int data){
+void insert_at_head(int data){
 	node* temp = newnode(data);
 	temp->prev = head->prev;
 	head->prev->next = temp;
@@ -60,20 +61,28 @@ void insertathead(int data){
 	temp->next = head;
 	head = temp;
 }
-void insertatrandom(int data, int pos){
-	node* n = newnode(data);
+void insert_at_random(int data, int pos){
 	node* temp = head;
+	node* n = newnode(data);
 	int count = 1;
-	while(temp->next!=head && count<pos-1){
-		temp = temp->next;
-		count++;
+	if(pos==1){
+		insert_at_head(data);
 	}
-	temp->next->prev = n;
-	n->next->next = temp->next;
-	temp->next = n;
-	n->prev = temp;
+	else if(pos == numberofnodes()){
+		insert_at_end(data);
+	}
+	else{
+		while(count<pos-1){
+			temp = temp->next;
+			count++;
+		}
+		temp->next->prev = n;
+		n->next = temp->next;
+		temp->next = n;
+		n->prev = temp;
+		}
 }
-void removefromend(){
+void remove_from_end(){
 	node* temp = head;
 	while(temp->next!=head){
 		temp = temp->next;
@@ -82,72 +91,81 @@ void removefromend(){
 	temp->next->prev = temp->prev;
 	free(temp);
 }
-void removefromhead(){
+void remove_from_head(){
 	head->prev->next = head->next;
 	head->next->prev = head->prev;
 	free(head);
 }
-void removefromrandom(int pos){
+void remove_from_random(int pos){
 	node* temp = head;
 	int count = 1;
-	while(temp->next!=head && count<pos){
-		temp = temp->next;
-		count++;
+	if(pos==1){
+		remove_from_head();
 	}
-	temp->prev->next = temp->next;
-	temp->next->prev = temp->prev;
-	free(temp);
+	else if(pos == numberofnodes()){
+		remove_from_end();
+	}
+	else{
+		while(count<pos-1){
+			temp = temp->next;
+			count++;
+		}
+		node *RIPnode = temp->next;
+		temp->next = temp->next->next;
+		free(RIPnode);
+	}
+}
+void show(){
+	node* temp;
+	temp = head;
+	while(temp->next != head){
+		printf("%d ", temp->data);
+		temp = temp->next;
+	}
+	printf("%d ", temp->data);
 }
 int main(){
 	printf("Making a Doubly linked list\n");
 	while(true){
-		printf("\nIf you want to add a node press 1");
-		printf("\nIf you want to see the list press 2\n");
-	//	printf("If you want to see the reverse of the list press 3\n");
-		printf("If you want to insert at the beginning press 4\n");
-		printf("If you want to insert at any random position press 5\n");
-		printf("If you want to remove from the end press 6\n");
-		printf("If you want to remove from the head press 7\n");
-		printf("If you want to remove from random position press 8\n");
-		printf("Press any other digit to exit\n");
+		printf("\nPress '1' to add a node & Press '4' to remove\n");
+		printf("Press '2' to add node at head & Press '5' to remove from head\n");
+		printf("Press '3' to add node at any random place & Press '6' to remove from any place\n");
+		printf("Enter '7' to see the full List.\n");
 		int n;
 		int data;
 		int pos;
 		scanf("%d", &n);
+		
 		if(n==1){
 		printf("\nEnter the value of the node: ");
 		scanf("%d", &data);
-		userinlist(data);
+		insert_at_end(data);
 		}
 		else if(n==2){
-			show();
-		}
-		/*else if(n==3){
-			reverse();
-			show();
-		}*/
-		else if(n==4){
 			printf("Enter the value: \n");
 			scanf("%d", &data);
-			insertathead(data);
+			insert_at_head(data);
+		}
+		else if(n==3){
+			printf("Enter the value: \n");
+			scanf("%d", &data);
+			printf("Enter the position: \n");
+			scanf("%d", &pos);
+			insert_at_random(data, pos);
+		}
+		else if(n==4){
+			remove_from_end(data);
 		}
 		else if(n==5){
-			printf("Enter the value: \n");
-			scanf("%d", &data);
-			printf("Enter the position: \n");
-			scanf("%d", &pos);
-			insertatrandom(data, pos);
+			remove_from_head();
 		}
 		else if(n==6){
-			removefromend();
-		}
-		else if(n==7){
-			removefromhead();
-		}
-		else if(n==8){
 			printf("Enter the position: \n");
 			scanf("%d", &pos);
-			removefromrandom(pos);
+			remove_from_random(pos);
+		}
+		else if(n==7){
+			show();
 		}
 		else{
 			break;

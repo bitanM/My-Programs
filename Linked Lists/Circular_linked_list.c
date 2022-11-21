@@ -14,6 +14,15 @@ node* newnode(int data){
 }
 node* head;
 node* last;
+int numberofnodes(){
+	node* temp = head;
+	int num=0;
+	while(temp!=last){
+		num ++;
+		temp = temp->next;
+		}
+	return num;
+}
 void insert_at_end(int data){
 	node* n = newnode(data);
 	if(head == NULL){
@@ -39,15 +48,6 @@ void insert_at_head(int data){
 	n->next = head;
 	head = n;
 }
-int numberofnodes(){
-	node* temp = head;
-	int num=1;
-	while(temp!=last){
-		num ++;
-		temp = temp->next;
-		}
-	return num;
-}
 void insert_at_random(int data, int pos){
 	node* temp = head;
 	node* n = newnode(data);
@@ -67,7 +67,6 @@ void insert_at_random(int data, int pos){
 		temp->next = n;
 	}
 }
-
 void remove_from_head(){
 	last->next = head->next;
 	free(head);
