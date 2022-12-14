@@ -1,6 +1,7 @@
-# My-Programs
-1. Data Structure implementation.
-2. Basic Algorithm implementation.
+# My-Programs : 
+1. Implementation of Data Structure using C.
+2. Implementation of basic Algorithms using C.
 3. Java files.
-4. Shell Programming.
-5. NS Simulator files.
+4. Python files.
+5. Shell Programming.
+6. NS Simulator files.
