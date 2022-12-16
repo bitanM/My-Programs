@@ -1,4 +1,5 @@
-
+# include<stdio.h>
+# include<stdlib.h>
 int main(){
 	int el;
 	printf("Enter the number of elements: ");
