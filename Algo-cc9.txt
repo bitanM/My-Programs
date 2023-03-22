@@ -1,25 +1,29 @@
-Algorithm 2.1.1: Add Customer details
+Algorithm 1.2.1: Add Customer 
 	Step1: Start
 	Step2: Read name, address, phone number, ID-type and ID-number
 	Step3: Generate a unique customer ID
-	Step4: Store customer details in customer-record table
+	Step4: Store customer details in customer_record table
 	Step5: Display a message indicating successful/unsuccessful insertion
 	Step6: Stop
-Algorithm 2.1.2: Delete Customer details
+Algorithm 1.2.2: Delete Customer 
 	Step1: Start
 	Step2: Read customer ID
-	Step3: Remove customer details from customer-record table
+	Step3: Remove customer details from customer_record table
 	Step4: Display a message indicating successful/unsuccessful deletion
 	Step5: Stop
-Algorithm 2.1.3: Update Customer details
+Algorithm 1.2.3: Update Customer
 	Step1: Start
-	Step2: Read customer ID
-	Step3: 
-	
-Algorithm 2.1.4: View a specific customer details
+	Step2: Read few customer details along with customer ID
+	Step3: Update customer details in customer_record table
+	Step4: Display a message indicating successful/unsuccessful Updation
+	Step5: Stop
+Algorithm 1.2.4: View a specific customer 
 	Step1: Start
 	Step2: Read customer ID
 	Step3: Display the details of the customer corresponding to the ID
 	Step4: Stop
-Algorithm 2.1.5: View all customer details
-	
+Algorithm 1.2.5: View all customer details
+	Step1: Start
+	Step2: Fetch all customer details from the customer_record table
+	Step3: Display all customer details
+	Step4: Stop
