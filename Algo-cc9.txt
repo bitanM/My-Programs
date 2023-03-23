@@ -7,26 +7,28 @@ Algorithm 1.1.1: Add Room
 	Step5: Stop
 Algorithm 1.2.2: Delete Room 
 	Step1: Start
-	Step2: Read room number
-	Step3: Search for the record corresponding to the given number
-	Step3: If found remove room details from room_record table
-	Step4: Display a message indicating successful/unsuccessful deletion
-	Step5: Stop
+	Step2: Read room_no
+	Step3: Search for the record corresponding to the given room_no
+	Step4: If found remove the corresponding room details from room_record table
+	Step5: Display a message indicating successful/unsuccessful deletion
+	Step6: Stop
 Algorithm 1.2.3: Update Room
 	Step1: Start
-	Step2: Read few room details along with room number
-	Step3: If found update customer details in room_record table
-	Step4: Display a message indicating successful/unsuccessful Updation
-	Step5: Stop
+	Step2: Read few room details along with room_no
+	Step3: Search for the record corresponding to the given room_no
+	Step4: If found update room details in room_record table
+	Step5: Display a message indicating successful/unsuccessful Updation
+	Step6: Stop
 Algorithm 1.2.4: View a specific room 
 	Step1: Start
-	Step2: Read room number
-	Step3: If found display the details of the room corresponding to the ID
-	Step4: Stop
-Algorithm 1.2.5: View all customer details
+	Step2: Read room_no
+	Step3: Search for the record corresponding to the given room_no
+	Step4: If found display the details of the room corresponding to the room_no else display appropriate message.
+	Step5: Stop
+Algorithm 1.2.5: View all room details
 	Step1: Start
-	Step2: Fetch all customer details from the customer_record table
-	Step3: Display all customer details
+	Step2: Fetch all room details from the room_record table
+	Step3: Display all room details
 	Step4: Stop
 -----------------------------------------------------------------------------------------
 
