@@ -1,4 +1,4 @@
-import IT.*;
+package IT;
 
 public class Client {
 	public static void main(String[] args) {
