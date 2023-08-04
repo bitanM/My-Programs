@@ -1,4 +1,4 @@
-package Bean.com;
+package IT;
 
 public class BankServer implements java.io.Serializable {
 	private String userid, username, password;
@@ -44,6 +44,18 @@ public class BankServer implements java.io.Serializable {
 				+ Account_no + ", balance=" + balance + "]";
 	}
 	
+	public void credit(double amount){
+		this.balance += amount;
+		System.out.println("Your account is credited with Rs. "+amount+". Now the balance is Rs. "+balance);
+	}
 	
-	
+	public void debit(double amount){
+		if(amount>this.balance){
+			System.out.println("The requested amount could not be debited.");
+		}
+		else{
+			this.balance -= amount;
+		System.out.println("The amount of Rs. "+amount+"is debited from your account. Your existing balance is Rs. "+balance);
+		}
+	}
 }
