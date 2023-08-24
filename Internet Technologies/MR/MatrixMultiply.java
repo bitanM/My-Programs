@@ -1,6 +1,6 @@
 import java.util.*;
 
-class MatMul{
+class MatrixMultiply{
 	public static void main(String[] args){
 		int row1, row2, col1, col2;
 		Scanner sc = new Scanner(System.in);
