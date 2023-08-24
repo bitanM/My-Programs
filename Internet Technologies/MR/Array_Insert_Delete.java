@@ -1,7 +1,7 @@
 //Write a program to perform insertion and deletion ops in an array based on index.
 import java.util.*;
 
-class array2{
+class Array_Insert_Delete{
 	static int[] arr;
 	static int n;
 	static int pos; 
