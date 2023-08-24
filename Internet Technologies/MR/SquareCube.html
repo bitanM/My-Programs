@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title> A chart for Squares and Cubes of numbers</title>
+	</head>
+	<body>
+		<h1>A chart for Squares and Cubes of numbers</h1>
+		<script>
+			var tab = '<table border=1 cellspacing=1><tr><td><b>Number</b></td><td><b>Square</b></td><td><b>Cube</b></td></tr>';
+			var num, sq, cub;
+			for(let i=5; i<=15; i++)
+			{
+				num = i;
+				sq = num*num;
+				cub = sq*num;
+				tab+='<tr><td>'+num+'</td><td>'+sq+'</td><td>'+cub+'</td></tr>';
+			}
+				tab+='</table>';
+		document.write(tab);
+		</script>
+	</body>
+</html>

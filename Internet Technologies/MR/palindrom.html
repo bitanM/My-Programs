@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Palindrome Check</title>
+	</head>
+	<body>
+		<script>
+			var str = prompt("Enter a String:");
+			str = str.toUpperCase();
+			var len = str.length;
+			var flag;
+			for(let i=0; i<=len/2; i++){
+				if(str[i]==str[len-1-i]){
+					flag = true;
+				}
+				else{
+					flag = false;
+					break;
+				}
+			}
+			document.write("The given string is: "+str);
+			if(flag){
+				document.write("<p>It is a Palindrome</p>");
+			}
+			else{
+				document.write("<p>It is not a Palindrome</p>");
+			}
+		</script>
+	</body>
+</html>
