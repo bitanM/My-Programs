@@ -1,7 +1,7 @@
 //Write a program to insert few integer values in an ArrayList,add 5 to each element and print.
 import java.util.*;
 
-class AL{
+class arraylist{
 	public static void main(String[] args) {
 		ArrayList <Integer> num_list = new ArrayList <Integer> ();
 		System.out.println("Enter the number of elements: ");
