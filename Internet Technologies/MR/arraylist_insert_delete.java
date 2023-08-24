@@ -1,5 +1,5 @@
 import java.util.*;
-class al_ins_del{		
+class arraylist_insert_delete{		
 		public static void main(String[] args){
 		ArrayList <Integer> num_list = new ArrayList <Integer> ();
 		int n;
