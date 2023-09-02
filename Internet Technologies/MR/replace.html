@@ -1,0 +1,20 @@
+<html>
+<body>
+	<script>
+		var str = prompt("Enter the string:");
+		var word = prompt("Enter the word to replace:");
+		var replace = prompt("Enter the word to replace with:");
+		let arr = str.split(" ");
+		let arr1 = word.split(" ");
+		let arr2 = replace.split(" ");
+		for(let i=0; i<arr.length; i++){
+			for(let j=0; j<arr1.length; j++){
+				if(arr[i] == arr1[j]){
+					arr[i] = arr2[j];
+				}
+			}
+		}
+		document.write(arr.join(" "));
+	</script>
+</body>
+</html>

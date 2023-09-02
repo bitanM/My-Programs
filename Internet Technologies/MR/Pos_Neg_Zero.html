@@ -1,0 +1,37 @@
+<html>
+<body>
+	<script>
+		var count_pos = 0;
+		var count_neg = 0;
+		var count_zero = 0;
+		while(true){
+			var n = prompt("Enter the number of elements: ");
+			if(n == "" || isNaN(Number(n)) || Number(n)<=0){
+				alert("Enter a valid number");
+			}
+			else{
+				for(let i=0; i<Number(n); i++){
+					var num = prompt("Enter the element:");
+					if(num == "" || isNaN(Number(num))){
+						alert("Enter a valid integer");
+						i--;
+					}
+					else if(num<0){
+						count_neg++;
+					}
+					else if(num==0){
+						count_zero++;
+					}
+					else{
+						count_pos++;
+					}
+				}
+				break;
+			}
+		}
+		document.write("<br>Number of Zeros: "+count_zero);
+		document.write("<br>Number of Negative Integers: "+count_neg);
+		document.write("<br>Number of Positive Integers: "+count_pos);
+	</script>
+</body>
+</html>
