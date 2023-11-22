@@ -1,0 +1,49 @@
+<!--Create an event driven program to enter a list of positive numbers terminated by zero. Find the sum and average of these numbers.-->
+<html>
+<head>
+<title>Sum and Average</title>
+</head>
+<body>
+        <h2>Sum and Average</h2>
+        <input type="button" onclick="calculateSumAndAverage()" value="Click me">
+        <script>
+                function calculateSumAndAverage(){
+                        let sum = 0;
+                        let isValidLength = false;
+                        let n;
+                        do{
+                                n = Number(prompt("Enter the number of digits: "));
+                                if(n > 0 && !isNaN(n)){
+                                        isValidLength = true;
+                                }
+                                else{
+                                        alert("Number of inputs should be a positive integer");
+                                }
+                        }while(!isValidLength);
+                        for(let i=0; i<n;){
+                                let x = Number(prompt("Enter a positive number"));
+                                        if(isNaN(x)){
+                                                alert("This is not a number");
+                                        }
+                                        else if(x<=0){
+                                                alert("This is not a positive number");
+                                        }
+                                        else if(x%10){
+                                                alert("This number is not terminated by zero");
+                                        }
+                                        else{
+                                                sum += x;
+                                                i++;
+                                        }
+                                        if(n>0){
+                                                let average = sum/n;
+                                                alert("Sum: " + sum + "\nAverage: " + average.toFixed(2));
+                                        }
+                                        else{
+                                                alert("No valid input");
+                                        }
+                        }
+                }
+        </script>
+</body>
+</html>
