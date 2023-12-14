@@ -1,4 +1,4 @@
-// Java program to Update a records in database.
+// Java program to Insert rows in database.
 import java.sql.*;
 public class InsertRecords{
 public static void main(String[] args){
