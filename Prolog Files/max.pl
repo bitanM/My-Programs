@@ -1,4 +1,10 @@
-max(X, Y, Z) :- X >= Y, Z is X.
-max(X, Y, Z) :- X < Y, Z is Y.
+max(X, Y):-
+    (
+      X=Y ->  
+          write('both are equal');
+      (X>Y ->  
+          write(X));
+      (write(Y))
+).
 
-% max(10, 20, Z).
+%max(10, 15)
