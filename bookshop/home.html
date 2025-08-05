@@ -2,12 +2,68 @@
 <html>
 <head>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+        }
         .desc {
-            margin: 30px;
-            padding: 20px;
-            border: 1px solid #aaa;
-            background: #f9f9f9;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 40px;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             font-size: 18px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .desc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+            background-size: 200% 100%;
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        h2 {
+            color: #495057;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        p {
+            line-height: 1.8;
+            color: #6c757d;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .feature-highlight h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
         }
     </style>
 </head>
@@ -17,6 +73,10 @@
         <p>
             This website is your one-stop shop for all engineering textbooks. Browse the catalogue, add books to your cart, and enjoy a seamless shopping experience.
         </p>
+       <!-- <div class="feature-highlight">
+            <h3>🚀 Features</h3>
+            <p>Easy browsing • Secure login • Quick cart management • Branch-wise categories</p>
+        </div> -->
         <p>
             Use the navigation links above to login/register, view your cart, or explore our catalogue by branch using the links on the left.
         </p>
