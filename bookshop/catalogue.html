@@ -2,25 +2,79 @@
 <html>
 <head>
     <style>
-        body { margin:0; padding:0; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .category-title {
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            color: #495057;
+            background: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
         .nav-link {
-            display:block;
-            padding: 12px 10px;
-            border-bottom: 1px solid #ccc;
-            font-size: 16px;
-            background: #fafafa;
-            color: #222;
+            display: block;
+            padding: 20px 15px;
+            margin: 10px 15px;
+            border-bottom: none;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #495057;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        .nav-link:hover::before {
+            left: 100%;
         }
         .nav-link:hover {
-            background: #e0e0e0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .nav-link::after {
+            content: '→';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover::after {
+            opacity: 1;
+            right: 15px;
         }
     </style>
 </head>
 <body>
-<a href="catalogue_cse.html" class="nav-link" target="mainFrame">CSE</a>
-<a href="catalogue_ece.html" class="nav-link" target="mainFrame">ECE</a>
-<a href="catalogue_eee.html" class="nav-link" target="mainFrame">EEE</a>
-<a href="catalogue_civil.html" class="nav-link" target="mainFrame">CIVIL</a>
+<div class="category-title">📚 Select Engineering Branch</div>
+<a href="catalogue_cse.html" class="nav-link" target="mainFrame">Computer Science Engineering (CSE)</a>
+<a href="catalogue_ece.html" class="nav-link" target="mainFrame">Electronics & Communication (ECE)</a>
+<a href="catalogue_eee.html" class="nav-link" target="mainFrame">Electrical & Electronics (EEE)</a>
+<a href="catalogue_civil.html" class="nav-link" target="mainFrame">Civil Engineering</a>
 </body>
 </html>
