@@ -111,6 +111,107 @@
                 <td>Image</td>
                 <td><button type="button" onclick="executeSnippet(17)">Execute</button></td>
             </tr>
+            <tr>
+                <td>&lt;input&gt;</td>
+                <td>Input</td>
+                <td><button type="button" onclick="executeSnippet(18)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;li&gt;</td>
+                <td>List</td>
+                <td><button type="button" onclick="executeSnippet(19)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;link&gt;</td>
+                <td>Link</td>
+                <td><button type="button" onclick="executeSnippet(20)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;marquee&gt;</td>
+                <td>Marquee</td>
+                <td><button type="button" onclick="executeSnippet(21)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;menu&gt;</td>
+                <td>Menu</td>
+                <td><button type="button" onclick="executeSnippet(22)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;meta&gt;</td>
+                <td>Meta</td>
+                <td><button type="button" onclick="executeSnippet(23)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;ol&gt;</td>
+                <td>Ordered List</td>
+                <td><button type="button" onclick="executeSnippet(24)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;option&gt;</td>
+                <td>Listbox Option</td>
+                <td><button type="button" onclick="executeSnippet(25)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>Paragraph</td>
+                <td><button type="button" onclick="executeSnippet(26)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;small&gt;</td>
+                <td>Small</td>
+                <td><button type="button" onclick="executeSnippet(27)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;strike&gt;</td>
+                <td>Deleted Text</td>
+                <td><button type="button" onclick="executeSnippet(28)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Strong Emphasis</td>
+                <td><button type="button" onclick="executeSnippet(29)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Table</td>
+                <td><button type="button" onclick="executeSnippet(30)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>Table Data</td>
+                <td><button type="button" onclick="executeSnippet(31)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>Table Header</td>
+                <td><button type="button" onclick="executeSnippet(32)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;title&gt;</td>
+                <td>Document Title</td>
+                <td><button type="button" onclick="executeSnippet(33)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>Table Row</td>
+                <td><button type="button" onclick="executeSnippet(34)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;tt&gt;</td>
+                <td>Teletype</td>
+                <td><button type="button" onclick="executeSnippet(35)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;u&gt;</td>
+                <td>Underline</td>
+                <td><button type="button" onclick="executeSnippet(36)">Execute</button></td>
+            </tr>
+            <tr>
+                <td>&lt;ul&gt;</td>
+                <td>Unordered list</td>
+                <td><button type="button" onclick="executeSnippet(37)">Execute</button></td>
+            </tr>
+
         </tbody>
     </table>
     </center>
@@ -133,7 +234,27 @@
             '<hr>',
             '<html><head><meta><title>Title of your web page</title></head><body>HTML web page contents</body></html>',
             '<i>Example</i>',
-            '<img src="image.gif" />'
+            '<img src="logo/dog.jpg" />',
+            '<form method=post action="/cgibin/example.cgi"><input type="text" size="10"maxlength="30"><input type="Submit" value="Submit"></form>',
+            '<menu><li type="disc">List item 1</li><li type="circle">List item 2</li><li type="square">List item 3</li></menu>',
+            '<head><link rel="stylesheet" type="text/css"href="style.css" /></head>',
+            '<marquee bgcolor="#cccccc" loop="-1"scrollamount="2" width="100%">ExampleMarquee</marquee>',
+            '<menu><li type="disc">List item 1</li><li type="circle">List item 2</li><li type="square">List item 3</li></menu>',
+            '<meta name="Description"content="Description of your site"><meta name="keywords"content="keywords describing your site">',
+            '<ol><li>List item 1</li><li>List item 2</li><li>List item 3</li><li>List item 4</li></ol>',
+            '<form method=post action="/cgibin/example.cgi"><center>Select an option:<select><option>option 1</option><option selected>option 2</option><option>option 3</option><option>option 4</option><option>option 5</option><option>option 6</option></select><br></center></form>',
+            'This is an example displaying the use of the paragraph tag. <p> This will create a line break and a space between lines. Attributes: Example 1:<br> <br> <p align="left">This is an example<br> displaying the use<br> of the paragraph tag.<br> <br> Example 2:<br> <br> <p align="right"> This is an example<br> displaying the use<br> of the paragraph tag.<br> <br> Example 3:<br><br><p align="center">This is an example<br>displaying the use<br>of the paragraph tag.',
+            '<small>Example</small>',
+            '<strike>Example</strike>',
+            '<strong>Example</strong>',
+            'Example 1:<table border="4" cellpadding="2"cellspacing="2" width="100%"><tr><td>Column 1</td><td>Column 2</td></tr></table>Example 2: (Internet Explorer)<table border="2" bordercolor="#336699"cellpadding="2" cellspacing="2"width="100%"><tr><td>Column 1</td><td>Column 2</td></tr></table>Example 3:<table cellpadding="2" cellspacing="2"width="100%"><tr><td bgcolor="#cccccc">Column 1</td><td bgcolor="#cccccc">Column 2</td></tr><tr><td>Row 2</td><td>Row 2</td></tr></table>',
+            '<table border="2" cellpadding="2"cellspacing="2" width="100%"><tr><td>Column 1</td><td>Column 2</td></tr></table>',
+            '<div align="center"><table><tr><th>Column 1</th><th>Column 2</th><th>Column 3</th></tr><tr><td>Row 2</td><td>Row 2</td><td>Row 2</td></tr><tr><td>Row 3</td><td>Row 3</td><td>Row 3</td></tr><tr><td>Row 4</td><td>Row 4</td><td>Row 4</td></tr></table></div>',
+            '<title>Title of your HTML page</title>',
+            '<table border="2" cellpadding="2"cellspacing="2" width="100%"><tr><td>Column 1</td><td>Column 2</td></tr></table>',
+            '<tt>Example</tt>',
+            '<u>Example</u>',
+            'Example 1:<br><br><ul><li>List item 1</li><li>List item 2</li></ul><br>Example 2:<br><ul type="disc"><li>List item 1</li><li>List item 2</li><ul type="circle"><li>List item 3</li><li>List item 4</li></ul></ul>',
 
         ];
 
@@ -147,11 +268,11 @@
                     <style>body{font-size:1.2em;font-family:sans-serif;}</style>
                 </head>
                 <body>
-                    <h3>Output:</h3>
-                    <div>${code}</div>
-                    <hr>
                     <h4>Source code:</h4>
                     <pre>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+                    <hr>
+                    <h3>Output:</h3>
+                    <div>${code}</div>
                 </body>
                 </html>
             `);
@@ -160,3 +281,4 @@
     </script>
 </body>
 </html>
+
