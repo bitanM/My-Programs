@@ -63,12 +63,60 @@
         <label for="phone">Phone Number:</label>
         <input type="text" id="phone" name="phone">
 
-        <!-- [Other fields stay unchanged] -->
+        <label>Sex:</label>
+        <div class="radio-group">
+            <input type="radio" id="male" name="sex" value="Male">
+            <label for="male" style="display:inline;">Male</label>
+            <input type="radio" id="female" name="sex" value="Female">
+            <label for="female" style="display:inline;">Female</label>
+        </div>
+        
+        <label>Date of Birth:</label>
+        <div class="dob-selects">
+            <select id="dob_day" name="dob_day">
+                <option value="">Day</option>
+            </select>
+            <select name="dob_month">
+                <option value="">Month</option>
+                <option>Jan</option><option>Feb</option><option>Mar</option>
+                <option>Apr</option><option>May</option><option>Jun</option>
+                <option>Jul</option><option>Aug</option><option>Sep</option>
+                <option>Oct</option><option>Nov</option><option>Dec</option>
+            </select>
+            <select name="dob_year">
+                <option value="">Year</option>
+                ${[...Array(50)].map((_,i)=>`<option value="${1975+i}">${1975+i}</option>`).join('')}
+            </select>
+        </div>
+        
+        <label>Languages Known:</label>
+        <div class="checkbox-group">
+            <input type="checkbox" id="english" name="languages" value="English">
+            <label for="english" style="display:inline;">English</label>
+            <input type="checkbox" id="telugu" name="languages" value="Telugu">
+            <label for="telugu" style="display:inline;">Telugu</label>
+            <input type="checkbox" id="hindi" name="languages" value="Hindi">
+            <label for="hindi" style="display:inline;">Hindi</label>
+            <input type="checkbox" id="tamil" name="languages" value="Tamil">
+            <label for="tamil" style="display:inline;">Tamil</label>
+        </div>
+        
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+
 
         <button class="submit-btn" type="submit">Register</button>
     </form>
 
     <script>
+
+        const select = document.getElementById('dob_day');
+            for (let i = 1; i <= 31; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            select.appendChild(option);
+             }
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
             const name = document.getElementById('name').value.trim();
             const password = document.getElementById('password').value.trim();
@@ -107,6 +155,9 @@
             }
 
             // If all validations pass, form will be submitted
+
+            
+
         });
     </script>
 </body>
