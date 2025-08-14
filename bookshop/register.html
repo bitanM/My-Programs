@@ -83,10 +83,8 @@
                 <option>Jul</option><option>Aug</option><option>Sep</option>
                 <option>Oct</option><option>Nov</option><option>Dec</option>
             </select>
-            <select name="dob_year">
-                <option value="">Year</option>
-                ${[...Array(50)].map((_,i)=>`<option value="${1975+i}">${1975+i}</option>`).join('')}
-            </select>
+            <label for="dob_year">Year</label>
+            <input type="year" id="dob_year" name="year">
         </div>
         
         <label>Languages Known:</label>
