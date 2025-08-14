@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart Page</title>
+    <style>
+        table { 
+            border-collapse: collapse; 
+            width: 80%; 
+            margin: 30px auto;
+        }
+        th, td { 
+            border: 1px solid #555; 
+            padding: 8px 12px; 
+            text-align: center; 
+        }
+        .header-table th {
+            background-color: #f3f3f3;
+            font-size: 18px;
+        }
+        .main-table th, .main-table td {
+            font-size: 16px;
+        }
+        .site-title {
+            font-weight: bold;
+            font-size: 20px;
+            padding: 12px 0;
+        }
+    </style>
+</head>
+<body>
+    <table class="header-table">
+        <tr>
+            <th rowspan="2">Logo</th>
+            <th colspan="5" class="site-title">Web Site Name</th>
+        </tr>
+        <tr>
+            <th>Home</th>
+            <th>Login</th>
+            <th>Registration</th>
+            <th>Catalogue</th>
+            <th>Cart</th>
+        </tr>
+    </table>
+    <table class="main-table">
+        <tr>
+            <th>CSE</th>
+            <th>Book name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>ECE</td>
+            <td>Java 2</td>
+            <td>$35.5</td>
+            <td>2</td>
+            <td>$70</td>
+        </tr>
+        <tr>
+            <td>EEE</td>
+            <td>XML bible</td>
+            <td>$40.5</td>
+            <td>1</td>
+            <td>$40.5</td>
+        </tr>
+        <tr>
+            <td>CIVIL</td>
+            <td colspan="4" style="text-align:left;">
+                <b>Total amount - $130.5</b>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
